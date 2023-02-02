@@ -1,0 +1,5 @@
+﻿  9_duilie_lesson.c
+D:\shuju_jiegou\9_duilie_zhan_lesson\9_duilie_zhan_lesson\9_duilie_lesson.c(1,1): warning C4828: 文件包含在偏移 0x342 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+  test.c
+  正在生成代码...
+  9_duilie_zhan_lesson.vcxproj -> D:\shuju_jiegou\9_duilie_zhan_lesson\x64\Debug\9_duilie_zhan_lesson.exe
