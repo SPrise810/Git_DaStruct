@@ -1,0 +1,3 @@
+﻿  test.c
+D:\shuju_jiegou\8_zhan_duilie_lesson\8_zhan_duilie_lesson\stack.h(1,1): warning C4828: 文件包含在偏移 0x334 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
+  8_zhan_duilie_lesson.vcxproj -> D:\shuju_jiegou\8_zhan_duilie_lesson\x64\Debug\8_zhan_duilie_lesson.exe
