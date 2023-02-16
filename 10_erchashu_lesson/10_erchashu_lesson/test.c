@@ -72,11 +72,6 @@ struct TreeNode
 */
 
 
-//
-// ew
-// 
-// 
-
 //1.4树再实际当中的应用
 //： 表示文件系统的目录结构
 
@@ -128,3 +123,6 @@ struct TreeNode
 
 //gg
 //good game bro
+
+
+//今天去模拟，忙的嘞
