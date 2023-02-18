@@ -142,7 +142,18 @@ struct TreeNode
 //应用上 我们有 堆排序 --时间复杂度为O(N*log N)  本质上是一种选择排序
 //2.topk  很多个数 选出最大的前K个数
 
+int main()
+{
+	Heap hp;
+	HeapInit(&hp);
+	int a[] = { 27,15,19,18,34,65,49,25,37 };
+	for ()
+	{
+		HeapPush(&hp, a[i]);
+	}
 
+	return 0;
+}
 
 
 
