@@ -106,7 +106,6 @@ struct TreeNode
 
 
 
-]
 //T4. 高度为h的完全二叉树，节点范围是( 2^(h-1) , 2^h-1 )
 
 //T5.常规题
@@ -141,17 +140,32 @@ struct TreeNode
 
 //应用上 我们有 堆排序 --时间复杂度为O(N*log N)  本质上是一种选择排序
 //2.topk  很多个数 选出最大的前K个数
-
-int main()
+#include"Heap.h"
+void TestHeap()
 {
-	Heap hp;
+	HP hp;
 	HeapInit(&hp);
-	int a[] = { 27,15,19,18,34,65,49,25,37 };
-	for ()
+	int a[] = { 27,15,19,18,28,34,65,49,25,37 };
+	for (int i = 0; i < sizeof(a) / sizeof(int); ++i)
 	{
 		HeapPush(&hp, a[i]);
 	}
+	HeapPrint(&hp);
 
+	HeapPush(&hp, 10);
+	HeapPrint(&hp);
+
+	HeapPop(&hp);
+	HeapPrint(&hp);
+	
+	HeapPop(&hp);
+	HeapPrint(&hp);
+
+
+}
+int main()
+{
+	TestHeap();
 	return 0;
 }
 
