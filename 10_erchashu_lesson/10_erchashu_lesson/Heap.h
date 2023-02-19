@@ -20,6 +20,8 @@ HPDataType HeapTop(HP* php);//È¡¶Ñ¶¥ÔªËØ
 bool HeapEmpty(HP* php);
 int HeapSize(HP* php);
 void Swap(HPDataType* p1,HPDataType* p2);
+void TestHeapSort();
+
 
 
 

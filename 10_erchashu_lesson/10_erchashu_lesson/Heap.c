@@ -17,7 +17,7 @@ void Adjustup(HPDataType* a, int child)//向上调整函数
 	int parent = (child - 1) / 2;
 	while (child>0)
 	{
-		if (a[child] < a[parent])
+		if (a[child] > a[parent])
 		{
 			Swap(&a[child], &a[parent]);
 			child = parent;
@@ -85,11 +85,11 @@ void AdjustDown(HPDataType* a, int size, int parent)//向下调整法
 	int child = parent * 2 + 1;//默认左孩子起步
 	while (child<size)
 	{
-		if (child+1<size && a[child + 1] < a[child])//判断左右孩子大小
+		if (child+1<size && a[child + 1] > a[child])//判断左右孩子大小
 		{
 			++child;
 		}
-		if (a[child] < a[parent])//孩子和父亲比较大小
+		if (a[child] > a[parent])//孩子和父亲比较大小
 		{
 			Swap(&a[child], &a[parent]);
 			parent = child;

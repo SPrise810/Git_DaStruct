@@ -163,9 +163,69 @@ void TestHeap()
 
 
 }
+void TestHeapSort()
+{
+	HP hp;
+	HeapInit(&hp);
+	int a[] = { 27,15,19,18,28,34,65,49,25,37 };
+	for (int i = 0; i < sizeof(a) / sizeof(int); ++i)
+	{
+		HeapPush(&hp, a[i]);
+	}
+	HeapPrint(&hp);
+	while (!HeapEmpty(&hp))
+	{
+		printf("%d ", HeapTop(&hp));
+		HeapPop(&hp);
+	}
+}
+void HeapSort(int* a,int size)
+{
+	//1.要先写一个Hp数据结构，反而复杂
+	//2.有O(N)的空间复杂度
+	//
+	HP hp;
+	HeapInit(&hp);
+	for (int i = 0; i < size; ++i)
+	{
+		HeapPush(&hp, a[i]);
+	}
+	int i = 0;
+	while (!HeapEmpty(&hp))
+	{
+		a[i++] = HeapTop(&hp);
+		HeapPop(&hp);
+	}
+	HeapDestoty(&hp);
+}
+void HeapSort2(int* a, int n)
+{
+
+	//建堆方法1：使用向下调整 进行排序，为升序
+	for (int i = 0; i < n; i++)
+	{
+		Adjustup(a, i);
+	}
+	//建堆方法2： 使用向上调整法，进行排序，为降序
+	//向上调整法，具有前提： 左右子树必须为堆
+	//所以我们换一种思路，从第一个非叶子节点（即有孩子）开始操作，看节点下有没有孩子，开始进行判断
+	//让它调整为一颗子树
+	//然后是第二个非叶子节点，下面有两个孩子
+	//以此类推，完成了
+	for (int i = (n - 1 - 1) / 2; i > 0; --i)
+	{
+		AdjustDown(a,n,i);
+	}
+}
 int main()
 {
-	TestHeap();
+	int a[] = { 27,15,19,18,28,34,65,49,25,37 };
+	int size = (sizeof(a) / sizeof(int));
+	HeapSort(a,size);
+	for (int i = 0; i < size; i++)
+	{
+		printf("%d ", a[i]);
+	}
 	return 0;
 }
 
