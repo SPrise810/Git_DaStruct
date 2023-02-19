@@ -69,6 +69,13 @@ void HeapPush(HP* php,HPDataType x)
 void AdjustDown(HPDataType* a, int size, int parent)//向下调整法
 {
 	//前提： 左子树是小堆，右子树也是小堆
+	//前提： 左子树是小堆，右子树也是小堆
+	//前提： 左子树是小堆，右子树也是小堆
+	//前提： 左子树是小堆，右子树也是小堆
+	//前提： 左子树是小堆，右子树也是小堆
+	//前提： 左子树是小堆，右子树也是小堆
+	//前提： 左子树是小堆，右子树也是小堆
+	//前提： 左子树是小堆，右子树也是小堆
 	
 	//int child = 0;
 	//while (child < size)

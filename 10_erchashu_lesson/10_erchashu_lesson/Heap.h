@@ -21,7 +21,7 @@ bool HeapEmpty(HP* php);
 int HeapSize(HP* php);
 void Swap(HPDataType* p1,HPDataType* p2);
 void TestHeapSort();
-
+void AdjustDown(HPDataType* a,int n,int x);
 
 
 
