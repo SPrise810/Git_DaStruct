@@ -123,7 +123,7 @@ HPDataType HeapTop(HP* php)//È¡¶Ñ¶¥ÔªËØ
 {
 	assert(php);
 	assert(php->size > 0);
-	return php->a[0];
+	return php->a[0]; 
 }
 bool HeapEmpty(HP* php)
 {
