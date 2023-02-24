@@ -48,6 +48,7 @@ void HeapPush(HP* php,HPDataType x)
 {
 	assert(php);
 	if (php->size == php->capacity)
+
 	{
 		//扩容
 		//考虑到初始化后capacity值为0
@@ -135,3 +136,10 @@ int HeapSize(HP* php)
 	assert(php);
 	return php->size == 0;
 }
+
+
+
+
+
+
+//
