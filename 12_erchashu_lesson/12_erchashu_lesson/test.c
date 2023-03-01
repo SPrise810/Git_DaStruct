@@ -9,6 +9,11 @@ int fun()
 
 
 }
+void fun2()
+{
+
+
+}
 int main()
 {
 	return 0;
