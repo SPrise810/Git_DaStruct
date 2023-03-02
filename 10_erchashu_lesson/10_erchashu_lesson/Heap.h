@@ -24,3 +24,4 @@ void TestHeapSort();
 void AdjustDown(HPDataType* a,int n,int x);
 void fun();
 void fun2();
+void fun3();
