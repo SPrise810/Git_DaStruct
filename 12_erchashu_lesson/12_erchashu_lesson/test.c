@@ -14,6 +14,16 @@ void fun2()
 
 
 }
+void fun3()
+{
+
+	;;
+}
+void fun4()
+{
+
+
+}
 int main()
 {
 	return 0;
