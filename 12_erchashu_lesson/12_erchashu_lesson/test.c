@@ -1,30 +1,22 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+
+
+
+
+
+
 #include<stdio.h>
-
-int fun()
-{
-	int a =0;
-	int b = 0;
-
-
-
-}
-void fun2()
-{
-
-
-}
-void fun3()
-{
-
-	;;
-}
-void fun4()
-{
-
-
-}
+#include <math.h>
 int main()
 {
+    int x,y=0;
+    scanf("%d", &x);
+    while (x > 10)
+    {
+        y = y + x % 10;
+        x = x / 10;
+    }
+    y = y + x;
+    printf("result = %d", y);
 	return 0;
 }
