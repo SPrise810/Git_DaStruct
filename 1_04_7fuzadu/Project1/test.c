@@ -226,6 +226,24 @@ int BinarySearch(int* a, int n, int x)
 //所以说 二分查找算法实际上是 一个很厉害的算法 ，但是死穴是排序 ，所以我们后面会变形，出现搜索树 B树啥的
 
 //直接进入到了做题阶段
-//
+// 
 
+//https://leetcode.cn/problems/missing-number-lcci/
+//面试题 17.04.消失的数字
 
+//思路2：
+int missingNumber(int* nums, int numsSize)
+{
+    int x = 0;
+    for (int i = 0; i < numsSize + 1; i++)
+    {
+        x ^= i;
+    }
+    for (int j = 0; j < numsSize; j++)
+    {
+        x ^= nums[j];
+    }
+    return x;
+}
+
+//目前总共有四个思路
