@@ -56,3 +56,50 @@ void BubbleSort(int* a, int n)
 		break;
 }
 }
+
+//3.空间复杂度
+//空间复杂度也是一个数学表达式，，是对一个 算法在运行过程中 临时占用存储空寂按大小的量度
+//估算 变量的个数，同样用大O渐进表示法
+//函数运行时的栈空间已经编译期确定，所以复杂度通过额外申请的空间来确定
+
+
+//空间复杂度示例1 
+// 计算BubbleSort的空间复杂度？
+void BubbleSort(int* a, int n)
+{
+	assert(a);
+	for (size_t end = n; end > 0; --end)
+{
+	int exchange = 0;
+	for (size_t i = 1; i < end; ++i)
+	{
+		if (a[i - 1] > a[i])
+		{
+			Swap(&a[i - 1], &a[i]);
+			exchange = 1;
+		}
+	}
+	if (exchange == 0)
+		break;
+}
+}
+//空间复杂度是多少呢  O(1) 哈哈哈哈我蒙对了，nice
+
+
+
+// 计算Fibonacci的空间复杂度？  示例2
+// 返回斐波那契数列的前n项
+long long* Fibonacci(size_t n)
+{
+	if (n == 0)
+		return NULL;
+
+	long long* fibAr
+	fibArray[1] = 1ray = (long long*)malloc((n + 1) * sizeof(long long));
+	fibArray[0] = 0;;
+	for (int i = 2; i <= n; ++i)
+	{
+		fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+	}
+	return fibArray;
+}
