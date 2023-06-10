@@ -87,8 +87,8 @@ void BubbleSort(int* a, int n)
 
 
 
-// 计算Fibonacci的空间复杂度？  示例2
-// 返回斐波那契数列的前n项
+// 计算Fibonacci  示例2
+// 返回斐波那契数列的前n项的空间复杂度
 long long* Fibonacci(size_t n)
 {
 	if (n == 0)
@@ -103,3 +103,32 @@ long long* Fibonacci(size_t n)
 	}
 	return fibArray;
 }
+//O(N)
+
+
+// 计算阶乘递归Fac的空间复杂度？  示例3 
+long long Fac(size_t N)
+{
+	if (N == 0)
+		return 1;
+
+	return Fac(N - 1) * N;
+}
+//O(N)
+
+
+// 计算斐波那契递归Fib的空间复杂度？
+long long Fib(size_t N)
+{
+	if (N < 3)
+		return 1;
+
+	return Fib(N - 1) + Fib(N - 2);
+}
+//从实际角度出发， 我们认为斐波那契数列不断递归的过程中，走到底的时候 Fib(2) Fib(1) 及以上的空间都是逐层同时利用
+// 返回后空间销毁，调用时在创建，是在一定的有限区域内不断地操作
+//也就是说 他们最终返回时，都是一层一层重复的调用函数重复利用然后在销毁
+///O(N)
+
+
+//栈帧保存局部变量和返回值
