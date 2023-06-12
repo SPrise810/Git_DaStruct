@@ -132,3 +132,48 @@ long long Fib(size_t N)
 
 
 //栈帧保存局部变量和返回值
+
+//上题目
+//3.2 旋转数组OJ链接：https://leetcode-cn.com/problems/rotate-array/
+
+void reverse(int* nums, int left, int right)
+{
+	while (left < right)
+	{
+		int tmp = nums[left];
+		nums[left] = nums[right];
+		nums[right] = tmp;
+		left++;
+		right--;
+	}
+}
+void rotate(int* nums, int numsSize, int k)
+{
+	k %= numsSize;
+	reverse(nums, 0, numsSize - k - 1);
+	reverse(nums, numsSize - k, numsSize - 1);
+	reverse(nums, 0, numsSize - 1);
+}
+void reverse(int* nums, int left, int right)
+{
+	while (left < right)
+	{
+		int tmp = nums[left];
+		nums[left] = nums[right];
+		nums[right] = tmp;
+		++left;
+		--right;
+	}
+}
+void rotate(int* nums, int numsSize, int k)
+{
+	k %= numsSize;
+	reverse(nums, 0, numsSize - k - 1);
+	reverse(nums, numsSize - k, numsSize - 1);
+	reverse(nums, 0, numsSize - 1);
+	return nums;
+}
+
+
+
+//下节课开始我们的   顺序表+单链表
