@@ -1,9 +1,7 @@
-
 //上节课我们主要讲解了时间复杂度和 空间复杂度
 //1. 算法效率
 //1）如何衡量一个算法是的好坏
 //   我们去计算 算法的运行次数
-
 /*
 //示例7
 // 计算阶乘递归Fac的时间复杂度？
@@ -62,7 +60,7 @@ void BubbleSort(int* a, int n)
 //函数运行时的栈空间已经编译期确定，所以复杂度通过额外申请的空间来确定
 
 
-//空间复杂度示例1 
+//空间复杂度示例1
 // 计算BubbleSort的空间复杂度？
 void BubbleSort(int* a, int n)
 {
@@ -105,7 +103,7 @@ long long* Fibonacci(size_t n)
 //O(N)
 
 
-// 计算阶乘递归Fac的空间复杂度？  示例3 
+// 计算阶乘递归Fac的空间复杂度？  示例3
 long long Fac(size_t N)
 {
 	if (N == 0)
@@ -185,3 +183,19 @@ void rotate(int* nums, int numsSize, int k)
 //声明放入.h文件中  定义放入.c文件中  测试专门写一个test.c文件
 //管理数据的大部分结构就是增删查改
 */
+
+#include"SeqList.h"
+void TestSeqList1()
+{
+	SL sl;
+	SeqLInit(&sl);
+
+}
+int main()
+{
+	TestSeqList1();
+
+	return 0;
+}
+
+

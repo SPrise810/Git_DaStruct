@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{44646ae3-64bb-4f85-be82-324fee54940e}</ProjectGuid>
-    <RootNamespace>My2419fuzalianbiao</RootNamespace>
+    <ProjectGuid>{175dc09d-52e8-4dde-a6a1-5c958e4fd6fa}</ProjectGuid>
+    <RootNamespace>My2419new</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="2_4_19.c" />
     <ClCompile Include="SeqList.c" />
     <ClCompile Include="test.c" />
   </ItemGroup>
