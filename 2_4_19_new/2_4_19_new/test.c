@@ -188,7 +188,7 @@ void rotate(int* nums, int numsSize, int k)
 void TestSeqList1()
 {
 	SL sl;
-	SeqLInit(&sl);
+	SLInit(&sl);
 
 }
 int main()

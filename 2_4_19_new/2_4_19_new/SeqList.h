@@ -1,7 +1,6 @@
 #pragma once  //防止声名重定义
 #include<stdio.h>
 #include<stdlib.h>
-#include<assert.h>
 #define N 200
 typedef int SLDataType;
 
@@ -25,4 +24,4 @@ typedef struct SeqList
 //这是一种合理的动态版本
 
 //开始着手于功能：  增删查改
-void SeqLInit(SL* ps);
+void SLInit(SL* ps);

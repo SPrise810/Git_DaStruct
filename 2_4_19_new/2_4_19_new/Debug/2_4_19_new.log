@@ -1,5 +1,2 @@
-﻿  SeqList.c
-  test.c
-  正在生成代码...
-test.obj : error LNK2019: 无法解析的外部符号 _SeqLInit，函数 _TestSeqList1 中引用了该符号
-D:\Git_DaStruct\2_4_19_new\Debug\2_4_19_new.exe : fatal error LNK1120: 1 个无法解析的外部命令
+﻿  test.c
+  2_4_19_new.vcxproj -> D:\Git_DaStruct\2_4_19_new\Debug\2_4_19_new.exe
