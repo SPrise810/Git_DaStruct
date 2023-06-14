@@ -188,7 +188,10 @@ void rotate(int* nums, int numsSize, int k)
 void TestSeqList1()
 {
 	SL sl;
-	SLInit(&sl);
+	SLInit(&sl);//形参的改变不会影响实参，所以我们用 
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 1);
 
 }
 int main()
@@ -199,3 +202,4 @@ int main()
 }
 
 
+  

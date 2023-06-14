@@ -24,4 +24,11 @@ typedef struct SeqList
 //这是一种合理的动态版本
 
 //开始着手于功能：  增删查改
+
+//增删查改    -- 命名风格跟随 STL语言
 void SLInit(SL* ps);
+void SLPushBack(SL* ps, SLDataType x);
+void SLPopBack(SL* ps);
+void SLPushFront(SL* ps, SLDataType x);
+void SLPopFront(SL* ps);
+
