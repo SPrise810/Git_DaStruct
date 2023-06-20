@@ -192,7 +192,14 @@ void TestSeqList1()
 	SLPushBack(&sl, 1);
 	SLPushBack(&sl, 1);
 	SLPushBack(&sl, 1);
-
+	SLPrint(&sl);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 1);
+	SLPrint(&sl);
 }
 int main()
 {
