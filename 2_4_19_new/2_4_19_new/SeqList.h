@@ -1,6 +1,7 @@
 #pragma once  //防止声名重定义
 #include<stdio.h>
 #include<stdlib.h>
+#include<assert.h>
 #define N 200
 typedef int SLDataType;
 
@@ -33,3 +34,4 @@ void SLPushFront(SL* ps, SLDataType x);
 void SLPopFront(SL* ps);
 void SLPrint(SL* ps);
 void SLCheckCapacity(SL* ps);
+void SLDestory(SL* ps);

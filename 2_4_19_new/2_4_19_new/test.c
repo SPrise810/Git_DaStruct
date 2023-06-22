@@ -201,9 +201,63 @@ void TestSeqList1()
 	SLPushBack(&sl, 1);
 	SLPrint(&sl);
 }
+void TestSeqList2()
+{
+	SL sl;
+	SLInit(&sl);
+	SLPushFront(&sl, 1);
+	SLPushFront(&sl, 2);
+	SLPushFront(&sl, 3);
+	SLPrint(&sl);
+}
+void TestSeqList3()
+{
+	SL sl;
+	SLInit(&sl);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 1);
+
+	SLPopBack(&sl);
+	SLPopBack(&sl);
+	SLPopBack(&sl);
+
+	SLDestory(&sl);//越界问题 内存问题 野指针问题 
+}
+void TestSeqList4()
+{
+	SL sl;
+	SLInit(&sl);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 2);
+	SLPushBack(&sl, 3);
+	SLPushBack(&sl, 4);
+	SLPrint(&sl);
+	SLPopFront(&sl);
+	SLPrint(&sl);
+}
 int main()
 {
-	TestSeqList1();
+	//代码出错先去调试代码  设置断点 一步步进行
+	// 
+	// 程序越界它不一定会报错
+	/*
+	//系统对越界的检查，是一种 设岗抽查。 和查酒驾一样，不一定能碰到警察
+	int a[10];
+	a[0]=0;
+	//a[10]=0;试一次
+	a[11]=1;//试一次
+	//a[12]=1;//你再试一次
+	*/
+
+	//空指针问题：  0x00F415E1 处有未经处理的异常.....  写入位置0x00000000时发生访问冲突
+    //空指针问题 从而引出一种 防御式编程
+	//防御式编程 ： 在有传递参数的函数里面  为了防止参数为空 进行assert断言 
+
+	//TestSeqList1();
+	//TestSeqList2();
+	//TestSeqList3();
+	TestSeqList4();
+
 
 	return 0;
 }

@@ -1,6 +1,7 @@
 #include"SeqList.h"
 void SLInit(SL* ps)
 {
+	assert(ps);
 	ps->a = NULL;
 	ps->size = ps->capacity = 0;
 }
@@ -8,6 +9,7 @@ void SLInit(SL* ps)
 //要学会 边写把边编译边纠错
 void SLPushBack(SL* ps, SLDataType x)
 {
+	assert(ps);
 	//插入前先检查顺序表容量
 	if (ps->size == ps->capacity)
 	{
@@ -26,6 +28,7 @@ void SLPushBack(SL* ps, SLDataType x)
 }
 void SLPrint(SL* ps)
 {
+	assert(ps);
 	for (int i = 0; i < ps->size; ++i)
 	{
 		printf("%d ", ps->a[i]);
@@ -35,6 +38,8 @@ void SLPrint(SL* ps)
 }
 void SLCheckCapacity(SL* ps)//检查容量
 {
+	assert(ps);
+
 	//插入前先检查顺序表容量
 	if (ps->size == ps->capacity)
 	{
@@ -51,10 +56,9 @@ void SLCheckCapacity(SL* ps)//检查容量
 }
 void SLPushFront(SL* ps, SLDataType x)//头插一个数据
 {
-	if (SLCheckCapacity)
-	{
-		
-	}
+	assert(ps);
+
+	SLCheckCapacity(ps);
 	//挪动一位数据
 	int end = ps->size - 1;
 	while(end>=0)
@@ -64,4 +68,35 @@ void SLPushFront(SL* ps, SLDataType x)//头插一个数据
 	}
 	ps->a[0] = x;
 	ps->size++;
+}
+void SLPopBack(SL* ps)
+{
+	assert(ps);
+	//SLPopBack  尾删
+	//
+	assert(ps->size > 0);//断言 暴力检查
+	ps->size--;
+}
+void SLDestory(SL* ps)//删除开辟的空间
+{
+	assert(ps);
+	if (ps->a)
+	{
+		free(ps->a);
+		ps->a = NULL;
+		ps->capacity = ps->size = 0;
+
+	}
+}
+void SLPopFront(SL* ps)
+{
+	assert(ps);
+	//头删
+	int begin = 1;
+	while (begin < ps->size)
+	{
+		ps->a[begin - 1] = ps->a[begin];
+		++begin;
+	}
+	ps->size--;
 }
