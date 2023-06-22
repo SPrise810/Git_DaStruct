@@ -9,22 +9,25 @@ void SLInit(SL* ps)
 //要学会 边写把边编译边纠错
 void SLPushBack(SL* ps, SLDataType x)
 {
-	assert(ps);
-	//插入前先检查顺序表容量
-	if (ps->size == ps->capacity)
-	{
-		int newcapacity = ps->capacity == 0 ? 4 : ps->capacity * 2;
-		SLDataType* tmp = (SLDataType*)realloc(ps->a, newcapacity * sizeof(SLDataType));
-		if (tmp == NULL)
-		{
-			printf("realloc fail\n");
-			exit(-1); //直接结束掉程序
-		}
-		ps->a = tmp;
-		ps->capacity = newcapacity;
-	}
-	ps->a[ps->size] = x;
-	ps->size++;
+	//assert(ps);
+	////插入前先检查顺序表容量
+	//if (ps->size == ps->capacity)
+	//{
+	//	int newcapacity = ps->capacity == 0 ? 4 : ps->capacity * 2;
+	//	SLDataType* tmp = (SLDataType*)realloc(ps->a, newcapacity * sizeof(SLDataType));
+	//	if (tmp == NULL)
+	//	{
+	//		printf("realloc fail\n");
+	//		exit(-1); //直接结束掉程序
+	//	}
+	//	ps->a = tmp;
+	//	ps->capacity = newcapacity;
+	//}
+	//ps->a[ps->size] = x;
+	//ps->size++;
+
+	SLInsert(ps, ps->size, x);
+	
 }
 void SLPrint(SL* ps)
 {
@@ -56,18 +59,21 @@ void SLCheckCapacity(SL* ps)//检查容量
 }
 void SLPushFront(SL* ps, SLDataType x)//头插一个数据
 {
-	assert(ps);
+	//assert(ps);
 
-	SLCheckCapacity(ps);
-	//挪动一位数据
-	int end = ps->size - 1;
-	while(end>=0)
-	{
-		ps->a[end + 1] = ps->a[end];
-		--end;
-	}
-	ps->a[0] = x;
-	ps->size++;
+	//SLCheckCapacity(ps);
+	////挪动一位数据
+	//int end = ps->size - 1;
+	//while(end>=0)
+	//{
+	//	ps->a[end + 1] = ps->a[end];
+	//	--end;
+	//}
+	//ps->a[0] = x;
+	//ps->size++;
+
+	SLInsert(ps, 0, x);
+
 }
 void SLPopBack(SL* ps)
 {
@@ -99,4 +105,25 @@ void SLPopFront(SL* ps)
 		++begin;
 	}
 	ps->size--;
+}
+void SLInsert(SL* ps, int pos, SLDataType x)//在某个位置插入数据
+{
+	assert(ps);
+	assert(pos >= 0 && pos <= ps->size);
+	SLCheckCapacity(ps);
+	int end = ps->size - 1;
+	//插入数据都要考虑越界问题
+	while (end >= pos)
+	{
+		ps->a[end + 1] = ps->a[end];
+		--end;
+	}
+	ps->a[pos] = x;
+	ps->size++;
+
+
+}
+void SLErase(SL* ps, int pos, SLDataType x)
+{
+
 }

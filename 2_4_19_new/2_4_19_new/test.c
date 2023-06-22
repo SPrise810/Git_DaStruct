@@ -232,8 +232,10 @@ void TestSeqList4()
 	SLPushBack(&sl, 3);
 	SLPushBack(&sl, 4);
 	SLPrint(&sl);
-	SLPopFront(&sl);
+	SLInsert(&sl, 4, 5);
+	SLPushFront(&sl, 0);
 	SLPrint(&sl);
+	SLDestory(&sl);//越界问题 内存问题 野指针问题 
 }
 int main()
 {

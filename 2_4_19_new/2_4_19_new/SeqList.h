@@ -35,3 +35,6 @@ void SLPopFront(SL* ps);
 void SLPrint(SL* ps);
 void SLCheckCapacity(SL* ps);
 void SLDestory(SL* ps);
+//在任意位置插入删除
+void SLInsert(SL* ps, int pos, SLDataType x);
+void SLErase(SL* ps, int pos, SLDataType x);
