@@ -123,7 +123,35 @@ void SLInsert(SL* ps, int pos, SLDataType x)//在某个位置插入数据
 
 
 }
-void SLErase(SL* ps, int pos, SLDataType x)
+void SLErase(SL* ps, int pos)
 {
+	assert(ps);
+	assert(pos >= 0 && pos < ps->size);
+	int begin = pos;
+	while (begin < ps->size-1)
+	{
+		ps->a[begin] = ps->a[begin+1];
+		++begin;
+	}
+	ps->size--;
+}
+int SLFind(SL* ps, SLDataType x)
+{
+	assert(ps);
+	for (int i = 0; i < ps->size; ++i)
+	{
+		if (ps->a[i] == x)
+		{
+			return i;
+		}
+	}
+	return -1;
 
+}
+int SLModify(SL* ps, int pos, SLDataType x)//替换函数。应当结合 modify函数使用
+{
+	assert(ps);
+	assert(pos >= 0 && pos < ps->size);
+	ps->a[pos] = x;
+	return 1;
 }

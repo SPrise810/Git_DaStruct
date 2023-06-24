@@ -237,6 +237,52 @@ void TestSeqList4()
 	SLPrint(&sl);
 	SLDestory(&sl);//越界问题 内存问题 野指针问题 
 }
+void TestSeqList5()
+{
+	SL sl;
+	SLInit(&sl);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 2);
+	SLPushBack(&sl, 3);
+	SLPushBack(&sl, 4);	
+	SLPrint(&sl);
+	SLErase(&sl, 3);
+	SLPrint(&sl);
+
+}
+void TestSeqList6()
+{
+	SL sl;
+	SLInit(&sl);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 2);
+	SLPushBack(&sl, 3);
+	SLPushBack(&sl, 4);
+	SLPushBack(&sl, 5);
+	SLPrint(&sl);
+	printf("请输入你要删除的数据并插入：\n");
+	int a, b = 0;
+	scanf("%d %d",&a,&b);
+	if (SLFind(&sl, a)!=-1)
+	{
+		int pos = SLFind(&sl, a);
+		SLErase(&sl, pos);
+		SLInsert(&sl, pos, b);
+	}
+	SLPrint(&sl);
+}
+void TestSeqList7()
+{
+	SL sl;
+	SLInit(&sl);
+	SLPushBack(&sl, 1);
+	SLPushBack(&sl, 2);
+	SLPushBack(&sl, 3);
+	SLPushBack(&sl, 4);
+	SLPrint(&sl);
+	
+
+}
 int main()
 {
 	//代码出错先去调试代码  设置断点 一步步进行
@@ -255,10 +301,15 @@ int main()
     //空指针问题 从而引出一种 防御式编程
 	//防御式编程 ： 在有传递参数的函数里面  为了防止参数为空 进行assert断言 
 
+	//输入数据尽量放在测试函数里面，因为放在数据结构里面的话，会干扰它的正常结构
+
 	//TestSeqList1();
 	//TestSeqList2();
 	//TestSeqList3();
-	TestSeqList4();
+	//TestSeqList4();
+	//TestSeqList5();
+	//TestSeqList6();
+
 
 
 	return 0;

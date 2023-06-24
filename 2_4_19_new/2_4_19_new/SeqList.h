@@ -1,4 +1,5 @@
 #pragma once  //防止声名重定义
+#define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
@@ -37,4 +38,6 @@ void SLCheckCapacity(SL* ps);
 void SLDestory(SL* ps);
 //在任意位置插入删除
 void SLInsert(SL* ps, int pos, SLDataType x);
-void SLErase(SL* ps, int pos, SLDataType x);
+void SLErase(SL* ps, int pos);
+int SLFind(SL* ps,SLDataType x);
+int SLModify(SL* ps, int pos, SLDataType x);//修改
