@@ -148,7 +148,7 @@ int SLFind(SL* ps, SLDataType x)
 	return -1;
 
 }
-int SLModify(SL* ps, int pos, SLDataType x)//替换函数。应当结合 modify函数使用
+void SLModify(SL* ps, int pos, SLDataType x)//替换函数。应当结合 modify函数使用
 {
 	assert(ps);
 	assert(pos >= 0 && pos < ps->size);

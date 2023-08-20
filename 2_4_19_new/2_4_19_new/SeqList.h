@@ -40,4 +40,4 @@ void SLDestory(SL* ps);
 void SLInsert(SL* ps, int pos, SLDataType x);
 void SLErase(SL* ps, int pos);
 int SLFind(SL* ps,SLDataType x);
-int SLModify(SL* ps, int pos, SLDataType x);//ÐÞ¸Ä
+void SLModify(SL* ps, int pos, SLDataType x);//ÐÞ¸Ä

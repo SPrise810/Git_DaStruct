@@ -1,2 +1,3 @@
 ﻿  test.c
+D:\Git_DaStruct\2_4_19_new\2_4_19_new\test.c(327,12): warning C4101: “pos”: 未引用的局部变量
   2_4_19_new.vcxproj -> D:\Git_DaStruct\2_4_19_new\Debug\2_4_19_new.exe
