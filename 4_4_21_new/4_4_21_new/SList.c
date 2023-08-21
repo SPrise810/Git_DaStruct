@@ -1,27 +1,36 @@
 #include "SList.h"
 
-void TestSList1()
-{
-	SLTNode* n1 =(SLTNode*) malloc(sizeof(SLTDataType));
-	assert(n1);
-	SLTNode* n2 = (SLTNode*)malloc(sizeof(SLTDataType));
-	assert(n2);
-	SLTNode* n3 = (SLTNode*)malloc(sizeof(SLTDataType));
-	assert(n3);
-	SLTNode* n4 = (SLTNode*)malloc(sizeof(SLTDataType));
-	assert(n4);
-	n1->data = 1;
-	n2->data = 2;
-	n3->data = 3;
-	n4->data = 4;
 
-	n1->next = n2;
-	n2->next = n3;
-	n3->next = n4;
-	n4->next = NULL;
-}
-int main()
+void SListPrint(SLTNode* phead)
 {
-	TestSList1();
-	return 0;
+	SLTNode* cur = phead;
+	while (cur != NULL)
+	{
+		printf("%d->", cur->data);
+		cur = cur->next;
+	}
+	printf("NULL\n");
+}
+void SListPushback(SLTNode** pphead, SLTDataType x)
+{
+	//1.空
+	//2.找到尾之前的那个结点
+	SLTNode* newnode = (SLTNode*)malloc(sizeof(SLTNode));//malloc出来的空间不销毁
+	assert(newnode);
+	newnode->data = x;
+	newnode->next = NULL;
+	if (*pphead == NULL)
+	{
+		*pphead = newnode;
+	}
+	else
+	{
+		SLTNode* tail = *pphead;
+		while (tail->next != NULL)
+		{
+			tail = tail->next;
+		}
+		tail->next = newnode;
+	}
+
 }

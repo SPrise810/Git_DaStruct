@@ -11,3 +11,5 @@ typedef struct SListNode
 	struct SListNode* next;
 
 }SLTNode;
+void SListPrint(SLTNode* phead);
+void SListPushback(SLTNode** phead,SLTDataType x);
