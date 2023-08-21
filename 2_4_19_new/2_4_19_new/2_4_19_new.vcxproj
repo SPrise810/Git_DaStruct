@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SeqList.c" />
+    <ClCompile Include="sum.c" />
     <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
