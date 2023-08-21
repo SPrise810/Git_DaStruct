@@ -37,9 +37,18 @@ void TestSList2()
 {
 	SLTNode* n1 = NULL;//这里应该使用二级指针！！这个是错的
 	SListPrint(n1);
-	SListPushback(&n1, 5);
-	SListPushback(&n1, 5);
-	SListPushback(&n1, 5);
+	SListPushfront(&n1, 1);
+	SListPushback(&n1, 5);//取它的地址   指针的地址
+	SListPushback(&n1, 3);
+
+	SListPrint(n1);
+	SListPopfront(&n1);
+	SListPrint(n1);
+	SListPopfront(&n1);
+	SListPrint(n1);
+	SListPopfront(&n1);
+	SListPrint(n1);
+	SListPopfront(&n1);
 	SListPrint(n1);
 }
 int main()

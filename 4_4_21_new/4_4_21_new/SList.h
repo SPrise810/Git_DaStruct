@@ -12,4 +12,8 @@ typedef struct SListNode
 
 }SLTNode;
 void SListPrint(SLTNode* phead);
-void SListPushback(SLTNode** phead,SLTDataType x);
+void SListPushback(SLTNode** pphead,SLTDataType x);
+void SListPushfront(SLTNode** pphead, SLTDataType x);
+SLTNode* BuySListNode(SLTDataType x);
+void SListPopback(SLTNode** pphead);
+void SListPopfront(SLTNode** pphead);
