@@ -35,25 +35,39 @@ void TestSList1()
 }
 void TestSList2()
 {
-	SLTNode* n1 = NULL;//这里应该使用二级指针！！这个是错的
+	SLTNode* n1 = NULL;
 	SListPrint(n1);
-	SListPushfront(&n1, 1);
-	SListPushback(&n1, 5);//取它的地址   指针的地址
+	//SListPushfront(&n1, 1);
+	//SListPushback(&n1, 5);//取它的地址   指针的地址
 	SListPushback(&n1, 3);
 
 	SListPrint(n1);
-	SListPopfront(&n1);
+	SListPopback(&n1);
 	SListPrint(n1);
-	SListPopfront(&n1);
+	//SListPopfront(&n1);
+	//SListPrint(n1);
+	//SListPopfront(&n1);
+	//SListPrint(n1);
+}
+void TestSList3()
+{
+	SLTNode* n1 = NULL;
 	SListPrint(n1);
-	SListPopfront(&n1);
+	SListPushfront(&n1, 1);
+	SListPushback(&n1, 2);//取它的地址   指针的地址
+	SListPushback(&n1, 3);
 	SListPrint(n1);
-	SListPopfront(&n1);
-	SListPrint(n1);
+	SLTNode* ret = SListfind(n1, 3);
+	if (ret)
+	{
+		printf("找到了\n");
+		ret->data = 30;
+		SListPrint(n1);
+	}
 }
 int main()
 {
-	TestSList2();
+	TestSList3();
 
 	return 0;
 }

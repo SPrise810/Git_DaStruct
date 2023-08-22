@@ -17,3 +17,10 @@ void SListPushfront(SLTNode** pphead, SLTDataType x);
 SLTNode* BuySListNode(SLTDataType x);
 void SListPopback(SLTNode** pphead);
 void SListPopfront(SLTNode** pphead);
+SLTNode* SListfind(SLTNode* phead, SLTDataType x);
+
+//在pos位置之前插入
+void SListInsert(SLTNode** phead, SLTNode* pos, SLTDataType x);
+
+//删除Pos位置的值
+void SListErase(SLTNode** phead, SLTNode* pos);
