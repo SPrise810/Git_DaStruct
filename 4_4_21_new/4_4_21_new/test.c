@@ -57,16 +57,16 @@ void TestSList3()
 	SListPushback(&n1, 2);//取它的地址   指针的地址
 	SListPushback(&n1, 3);
 	SListPrint(n1);
-	SLTNode* ret = SListfind(n1, 3);
+	SLTNode* ret = SListfind(n1, 2);
 	if (ret)
 	{
 		printf("找到了\n");
 		ret->data = 30;
 		SListPrint(n1);
 	}
-	SListInsert(&n1, ret, 40);
+	SListInsertAfter(&n1, ret, 40);
 	SListPrint(n1);
-	SListErase(&n1, ret);
+	SListEraseAfter(ret);
 	SListPrint(n1);
 }
 int main()

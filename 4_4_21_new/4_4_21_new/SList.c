@@ -120,7 +120,7 @@ void SListErase(SLTNode** pphead, SLTNode* pos)
 	assert(pphead);
 	assert(pos);
 	SLTNode* prev = NULL;
-	if (*pphead = pos)
+	if (*pphead == pos)
 	{
 		SListPopfront(pphead);
 	}
@@ -139,7 +139,19 @@ void SListErase(SLTNode** pphead, SLTNode* pos)
 
 void SListInsertAfter(SLTNode** pphead, SLTNode* pos, SLTDataType x)
 {
-	 
+	assert(pos);
+	//Í·²å
+	if (pos == *pphead)
+	{
+		SListPushfront(pphead, x);
+	}
+	else
+	{
+		SLTNode* newnode = BuySListNode(x);
+		newnode->next = pos->next;
+		pos->next = newnode;
+
+	}
 }
 
 void SListEraseAfter(SLTNode* pos)
