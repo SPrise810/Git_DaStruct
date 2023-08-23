@@ -24,3 +24,7 @@ void SListInsert(SLTNode** phead, SLTNode* pos, SLTDataType x);
 
 //É¾³ýPosÎ»ÖÃµÄÖµ
 void SListErase(SLTNode** phead, SLTNode* pos);
+
+
+void SListInsertAfter(SLTNode** pphead, SLTNode* pos, SLTDataType x);
+void SListEraseAfter(SLTNode* pos);

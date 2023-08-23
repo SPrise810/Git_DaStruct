@@ -48,6 +48,7 @@ void SListPushfront(SLTNode** pphead, SLTDataType x)
 }
 void SListPopfront(SLTNode** pphead)
 {
+	assert(pphead);
 	assert(*pphead);
 	SLTNode* next = (*pphead)->next;
 	free(*pphead);
@@ -57,6 +58,7 @@ void SListPopfront(SLTNode** pphead)
 void SListPopback(SLTNode** pphead)
 {
 	assert(*pphead);
+	assert(pphead);
 	SLTNode* tail = *pphead;
 	SLTNode* prev = NULL;
 
@@ -91,17 +93,70 @@ SLTNode* SListfind(SLTNode* phead, SLTDataType x)
 	printf("未找到\n");
 	return NULL;
 }
-void SListInsert(SLTNode** phead, SLTNode* pos, SLTDataType x)
+void SListInsert(SLTNode** pphead, SLTNode* pos, SLTDataType x)
 {
-
+	assert(pos);
+	//头插
+	if (pos == *pphead)
+	{
+		SListPushfront(pphead, x);
+	}
+	else
+	{
+		SLTNode* prev = *pphead;
+		while (prev->next != pos)
+		{
+			prev = prev->next;
+		}
+		SLTNode* newnode = BuySListNode(x);
+		prev->next = newnode;
+		newnode->next = pos;
+	}
 }
-void SListErase(SLTNode** phead, SLTNode* pos)
+void SListErase(SLTNode** pphead, SLTNode* pos)
 {
+	//头删
+	//知道前一个地址
+	assert(pphead);
+	assert(pos);
+	SLTNode* prev = NULL;
+	if (*pphead = pos)
+	{
+		SListPopfront(pphead);
+	}
+	else
+	{
+		prev = *pphead;
+		while (prev->next != pos)
+		{
+			prev = prev->next;
+		}
 
+		prev->next = pos->next;
+		free(pos);
+	}
 }
 
+void SListInsertAfter(SLTNode** pphead, SLTNode* pos, SLTDataType x)
+{
+	 
+}
 
-
+void SListEraseAfter(SLTNode* pos)
+{
+	assert(pos);
+	if (pos->next == NULL)
+	{
+		return;
+	}
+	else
+	{
+		SLTNode* temp = pos->next;
+		pos->next = temp->next;//pos->next=  pos->n ->n
+		free(temp);//pos->next原位置
+		temp = NULL;
+	}
+}
 
 
 

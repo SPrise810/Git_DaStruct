@@ -64,6 +64,10 @@ void TestSList3()
 		ret->data = 30;
 		SListPrint(n1);
 	}
+	SListInsert(&n1, ret, 40);
+	SListPrint(n1);
+	SListErase(&n1, ret);
+	SListPrint(n1);
 }
 int main()
 {
